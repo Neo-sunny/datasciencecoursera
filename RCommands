@@ -1,0 +1,64 @@
+1)library(swirl)
+2)swirl()
+3)data=read.csv("filename.csv")// csv file is in working directory
+4)tail(data, n)
+5)sum(is.na(data))// all the na values
+6)mean(data$columnname, na.rm=TRUE)
+
+7)Mean of data of a column1 when value of column2 is x
+mean(data$column1[data$column2==x])
+
+8)Max value of column1 when value of column2 is x
+1.)dataset1<-subset(data, column2=x)
+2.)dataset1[which.max(dataset1$column1),]
+
+9)look at objects that are in your workspace using ls().
+10)List all the files in your working directory using list.files() or dir().
+11)Using the args() function on a function name is also a handy way to see what arguments a function can take
+	args(list.files)
+12) Use dir.create() to create a directory in the current working directory called "testdir".
+
+> dir.create("testdir")
+
+13)Using the args() function on a function name is also a handy way to see what arguments a function can take.
+14)Try seq(0, 10, by=0.5).
+15)we want a new vector (1, 2, 3, ...) that is the same length as my_seq
+		my_seq <- seq(5, 10, length=30)
+		seq_along(my_seq)
+16)vect <- c(foo = 11, bar = 2, norf = NA) // vector of named elements
+17)names(vect)// gives the names of vect elements
+18)vect2<- c(11, 2, NA) // create a vector
+19)names(vect2)<-c("foo", "bar", "norf") // assign names
+20)identical(vect,vect2)
+21)	attributes(my_vector)
+==========================
+Matrices And DataFrames
+1) my_matrix<-matrix(1:20,nrow = 4, ncol = 5)
+2) patients<-c("Bill", "Gina", "Kelly", "Sean")
+3)cbind(patients, my_matrix)
+4)  my_data <- data.frame(patients, my_matrix)
+5) cnames<-c("patient", "age", "weight", "bp", "rating", "test")
+6) colnames(my_data)<-cnames
+
+Functions:
+========================
+
+mean(c(2,4,5));
+mean // gives the source code
+args(mean)
+evaluate(function(x){tail(x, n=1)},c(8,4,0)) // gives the last element of vector
+
+======================
+Dates and Times
+
+d1 <- Sys.Date()
+t1<-Sys.time()
+By default, Sys.time() returns an object of class POSIXct,
+but we can coerce the result to POSIXlt with as.POSIXlt(Sys.time()). Give it a try and store
+| the result in t2.
+t2<-as.POSIXlt(Sys.time())
+
+Use difftime(Sys.time(), t1, units = 'days') to find the amount of time in DAYS that has passed since you created t1.
+weekdays(), months(), and quarters().
+
+POSIXt, which just functions as a common language between POSIXct and POSIXlt.
